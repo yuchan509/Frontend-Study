@@ -51,12 +51,21 @@ e.g) .cache, dist, node_modules
 
 - git init
 - git status
-- git add . : 버전 추적
+- git add . : 버전 추적.
 - git status : 변경 사항 추적 확인.
 - git commit -m 'Project'
 - git log
-- remote add origin https://github.com/yuchan509/Test.git
+- remote add origin https://github.com/yuchan509/Javacript.git
 - git push origin master
 
+* git commit message 수정 *
+  - git log
+  - git rebase -i HEAD~(변경할 Commit Message 수)
+  - i : insert mode, esc : command mode
+  - pick -> reword 수정.
+  - commit message 수정.
+  - :wq + enter (if -> e45: 'readonly' option is set (add ! to override) 발생할 경우 :w! + enter(강제 수정))
+  - git rebase --abort(도중에 rebase 중지하고자 할 경우)
+  - git push -f origin 현재 브랜치.
 #### ECMA Scriptm (ES)
 
