@@ -8,7 +8,7 @@ nvm uninstall Major.Minor.Patch
 nvm use Major.Minor.Patch
 nvm --version
 nvm --help
-
+---
 #### NPM
 
 npm init -y
