@@ -5,12 +5,12 @@
 npm run dev
 
 #### NVM
-nvm ls
-nvm install Major.Minor.Patch
-nvm uninstall Major.Minor.Patch
-nvm use Major.Minor.Patch
-nvm --version
-nvm --help
+- nvm ls
+- nvm install Major.Minor.Patch
+- nvm uninstall Major.Minor.Patch
+- nvm use Major.Minor.Patch
+- nvm --version
+- nvm --help
 
 #### NPM
 
@@ -36,13 +36,13 @@ npm run build 실행시 dist 폴더 생성됨 -> '난독화' 되어 자동 작�
 ^Major.Minor.Patch
 E.g :12.14.1
 
-^ : Major 버전 안에서 가장 최신 버전으로 업데이트 가능.
-npm info lodash : lodash 정보 확인.
-npm install lodash@4.17.20
-npm update lodash
+^ : Major 버전 안에서 가장 최신 버전으로 업데이트 가능. <br>
+npm info lodash : lodash 정보 확인. <br>
+npm install lodash@4.17.20 <br>
+npm update lodash 
 
-Major : 기존 버전과 호환되지 않는 새로운 버전. 
-Minor : 기존 버전과 호환되는 새로운 기능이 추가된 버전.
+Major : 기존 버전과 호환되지 않는 새로운 버전. <br>
+Minor : 기존 버전과 호환되는 새로운 기능이 추가된 버전. <br>
 Patch : 기존 버전과 호환되는 버그 및 오타 등이 수정된 버전.
 
 
