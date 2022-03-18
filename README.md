@@ -20,7 +20,7 @@ npm init -y
   ex) npm install lodash
 
 
-package.json
+package.json 추가 사항.
 
 "dev" : "parcel index.html" <br>
 "build" : "parcel build index.html : 사용자가 웹브라우저에서 보기 위한 방식.
