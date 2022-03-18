@@ -1,7 +1,7 @@
 # Javacript
 Javascript Study
 
-@ NVM
+#### NVM
 nvm ls
 nvm install Major.Minor.Patch
 nvm uninstall Major.Minor.Patch
@@ -9,7 +9,7 @@ nvm use Major.Minor.Patch
 nvm --version
 nvm --help
 
-@ NPM
+#### NPM
 
 npm init -y
 
@@ -28,7 +28,7 @@ npm run build 실행시 dist 폴더 생성됨 -> '난독화' 되어 자동 작�
 
 
 
-@ 유의적 버전(Semantic Versioning, SemVer)
+#### 유의적 버전(Semantic Versioning, SemVer)
 
 ^Major.Minor.Patch
 E.g :12.14.1
@@ -58,5 +58,5 @@ e.g) .cache, dist, node_modules
 - remote add origin https://github.com/yuchan509/Test.git
 - git push origin master
 
-@ ECMA Scriptm (ES)
+#### ECMA Scriptm (ES)
 
