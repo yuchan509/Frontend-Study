@@ -58,7 +58,7 @@ e.g) .cache, dist, node_modules
 - remote add origin https://github.com/yuchan509/Javacript.git
 - git push origin master
 
-* git commit message 수정 *
+* git commit message 수정 
   - git log
   - git rebase -i HEAD~(변경할 Commit Message 수)
   - i : insert mode, esc : command mode
