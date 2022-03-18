@@ -13,11 +13,11 @@ nvm --help
 
 npm init -y
 
-- npm install -D xxx : 개발용 의존성 패키지 설치. (개발할 때만 도움을 받는 용도)
-ex) npm install parcel-bundler -D (npm install -D parcel-bundler)
+- npm install -D xxx : 개발용 의존성 패키지 설치. (개발할 때만 도움을 받는 용도)<br>
+  ex) npm install parcel-bundler -D (npm install -D parcel-bundler)
 
-- npm install : 일반 의존성 패키지 설치. (개발 이후 웹 브라우저에서도 도움을 받아야할 용도)
-ex) npm install lodash
+- npm install : 일반 의존성 패키지 설치. (개발 이후 웹 브라우저에서도 도움을 받아야할 용도)<br>
+  ex) npm install lodash
 
 
 package.json
