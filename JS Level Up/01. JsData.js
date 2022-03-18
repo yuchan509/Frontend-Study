@@ -219,3 +219,153 @@ console.log(user['email'])
 // keys : Array -> Array.map() : 배열 데이터의 요소를 이용하여 Callback 함수를 Array의 길이만큼 수행.
 const values = keys.map(key => user[key])
 console.log(values)
+
+
+// 구조 분해 할당(Destructuring assignment)
+// : 구조 분해 할당 구문은 배열이나 객체의 속성을 해체하여 그 값을 개별 변수에 담을 수 있게 하는 JavaScript 표현식.
+// 비구조화 할당
+
+const user1 = {
+    name : 'uchan',
+    age : 28,
+    email : 'uchan@kt.com',
+    // address 설정될 경우 기본값은 무시됨.
+    address : 'Busan'
+}
+
+// address : 기본값 설정.
+const { name, age, email, address = 'Seoul' } = user1
+// E.g, user.adress
+
+console.log(`사용자 이름은 ${name}입니다.`)
+console.log(`${name}의 나이는 ${age}입니다.`)
+console.log(`${name}의 이메일 주소는 ${email}입니다.`)
+console.log(address)
+
+// 배열에서의 구조 분해 할당
+// type에 맞게 구성.
+const [n, m, l, s] = fruits
+console.log(n, m, l, s)
+
+const [, , t] = fruits
+console.log(t)
+
+// 전개 연산자(Spread Operator)
+console.log(fruits)
+
+// Apple Banana Cherry 문자열 형태로 출력.
+console.log(...fruits)
+
+const fruits1 = ['Apple', 'Banana', 'Cherry', 'Orange']
+
+// ...c : rest Paremeter
+// function toObject(a, b, ...c) {
+//     return {
+//         // a : a,
+//         // b : b,
+//         // c : c
+
+//         // 변수(데이터)의 이름 = 속성의 이름 -> 축약형 표현식 가능.
+//         a,
+//         b,
+//         c
+//     }
+// }
+
+// 화살표 함수로 표현.
+const toObject = (a, b, ...c) => ({a, b, c})
+
+// console.log(toObject(fruits1[0], fruits1[1], fruits1[2]))
+console.log(toObject(...fruits1))
+
+
+// 데이터 불변성(Immutability)
+// 원시 데이터 : String, Number, Boolean, undefined, null --> 데이터의 불변성으로 형태가 같으면 같다고 생각함.
+// ---------------------------------------------------------------
+// |1:   r : 1 -> i : 1 |2:   u : 4    |3:   r : 7   |4: i : 1 (x)
+// ---------------------------------------------------------------
+
+let r = 1;
+let u = 4
+console.log(r, u, r === u)
+
+// r이 바라보는 메모리 주소를 u에 할당하여 true 반환.
+u = r
+console.log(r, u, r === u)
+
+r = 7
+console.log(r, u, r === u)
+
+/* 새로원 원시 데이터 사용했을 때, 기존에 존재하는 메모리 주소에 있다면 새로운 메모리 주소가
+발생하는 것이 아니라, 기존의 메모리 주소로 바라보고 함. --> 이를 데이터의 불변성. */
+let i = 1
+console.log(u, i, u === i)
+
+
+// 참조형 데이터 : Object, Array, Function --> 주의 불변성 없음.(가변성을 가짐.) --> 같은 형태를 가져도 다르다고 판별될 수 있음.
+// ------------------------------------------
+// |1:  {        } |2:  {         }  |3:   
+// ------------------------------------------
+let aa = { k : 1 } // 1번 할당.
+let bb = { k : 1 } // 2번 할당.
+console.log(aa, bb, aa === bb)
+
+// aa의 k값 수정. 
+aa.k = 7
+
+// bb를 aa와 같은 메모리 주소로 할당.
+bb = aa
+console.log(aa, bb, aa === bb)
+
+// aa의 k값 수정.
+aa.k = 2
+// aa와 bb가 바라보는 메모리 주소가 같으므로, bb의 k값도 2로 수정되면서 true 반환.
+console.log(aa, bb, aa === bb)
+
+// cc도 bb와 aa와 같은 메모리 주소로 할당.
+let cc = bb
+console.log(aa, bb, cc, aa === cc)
+
+aa.k = 10
+console.log(aa, bb, cc, aa === cc)
+
+
+// 얕은 복사(Shallow copy)
+const user2 = {
+    name : 'uchan',
+    age : 28,
+    email : ['uchan@kt.com']
+}
+// const copyUser = user2
+
+// 문제 해결을 위해 위를 다음과 같이 변경. --> copyUser와 user2와 다른 메모리 주소를 가지게 됨.
+// 참조형 데이터 --> 데이터 가변성 문제를 해결하기 위해 복사 개념을 사용.
+// const copyUser = Object.assign({}, user2)
+// const copyUser = {...user2}
+
+// 깊은 복사(Deep copy)
+const copyUser = _.cloneDeep(user2)
+
+console.log('user2', user2)
+console.log(copyUser === user2)
+
+// user2의 age를 변경했는데, copyUser도 같이 변경되는 문제가 발생.(같은 메모리 주소로 바라보고 있음.)
+user2.age = 29
+console.log('user2', user2)
+console.log('copyUser', copyUser)
+
+console.log('------------------------------------')
+
+// 깊은 복사(Deep copy)
+// https://lodash.com/
+import _ from 'lodash'
+
+// 이와 같은 문제를 해결하기 위해 깊은 복사 이용.
+// const copyUser = _.cloneDeep(user2)
+// https://lodash.com/docs/4.17.15#cloneDeep
+// cloneDeep : This method is like _.cloneWith except that it recursively clones value.
+user2.email.push('jy@kt.com')
+console.log(user2.email === copyUser.email)
+console.log('user2', user2)
+console.log('copyUser', copyUser)
+
