@@ -1,7 +1,7 @@
 {
   "name": "JS",
   "version": "1.0.0",
-  "description": "",
+  "description": "nvm ls\r nvm install Major.Minor.Patch\r nvm uninstall Major.Minor.Patch\r nvm use Major.Minor.Patch\r nvm --version\r nvm --help",
   "main": "index.js",
   "scripts": {
     "dev": "parcel index.html",
@@ -12,5 +12,16 @@
   "license": "ISC",
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuchan509/Javacript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuchan509/Javacript/issues"
+  },
+  "homepage": "https://github.com/yuchan509/Javacript#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
