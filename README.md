@@ -1,5 +1,8 @@
-# Javacript
+# Javascript
 ### Javascript Study
+
+### Setting
+npm run dev
 
 #### NVM
 nvm ls
