@@ -22,7 +22,7 @@ ex) npm install lodash
 
 package.json
 
-"dev" : "parcel index.html"
+"dev" : "parcel index.html" <br>
 "build" : "parcel build index.html : 사용자가 웹브라우저에서 보기 위한 방식.
 npm run build 실행시 dist 폴더 생성됨 -> '난독화' 되어 자동 작성됨.
 
