@@ -72,3 +72,24 @@ e.g) .cache, dist, node_modules
   - git push -f origin 현재 브랜치.
 #### ECMA Scriptm (ES)
 
+
+#### 정규표현식(Regular Expression, RegExp)
+  #### 역할
+
+  - 문자 검색(search)
+  - 문자 대체(replace)
+  - 문자 추출(extract)
+
+  #### Test site
+  - https://regexr.com/
+
+  #### 정규식t 생성
+  ```js
+  // 생성자
+  new RegExp('표현', '옵션')
+  new RegExp('[a-z]', 'gi')
+
+  // 리터럴
+  /표현/옵션
+  /[a-z]/gi
+  ```
