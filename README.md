@@ -100,11 +100,13 @@ e.g) .cache, dist, node_modules
                 Hello 
                 010-1234-5678
                 uchan@kt.com
+                http
                 https://www.omdbapi.com/?apikey=7035c60c&s=frozen
                 You didn't love when you had me.
                 But now, you need me so badly.
                 You can't be serious. (Ha-ha-ha)
                 That's hilarious. (Ha-ha-ha-ha-ha)
+                abbcccdddd
               `
     ```
 
@@ -131,3 +133,6 @@ e.g) .cache, dist, node_modules
     . | 임의의 한 문자와 일치
     a&verbar;b  | a 또는 b와 일치
     ab? | b가 없거나 b와 일치
+    {3} | 3개 연속 일치
+    {3,} | 3개 이상 연속 일치
+    {3,5} | 3개 이상 5개 이하(3~5개) 연속 일치
