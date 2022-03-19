@@ -145,3 +145,5 @@ e.g) .cache, dist, node_modules
     \b | 63개 문자에 일치하지 않는 문자 경계(Boundary)
     \d | 숫자(Digit)에 일치
     \s | 공백(Space, Tab 등)에 일치
+    (?=) | 앞쪽 일치(Lookahead)
+    (?<=) | 뒤쪽 일치(Lookbehind)
