@@ -1,5 +1,5 @@
-# Javascript
-### Javascript Study
+# JavaScript
+### JavaScript Study
 
 ### Setting
 - npm run dev
