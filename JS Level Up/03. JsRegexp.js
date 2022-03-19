@@ -62,3 +62,33 @@ console.log(str.match(/d{2,3}/gim))
 // \w : 영어 알파벳, 숫자, 언더스코어(_) <-> \W
 // \d : 숫자 <-> \D
 console.log(str.match(/\b\w{2,3}\b/gim))
+
+// [abc] : a or b or c를 찾아 반환.
+console.log(str.match(/[you]/g))
+console.log(str.match(/[0-9]{1,}/g))
+
+// 63개 문자(Word, 대소영문 52개 + 숫자 10개 + _)
+console.log(str.match(/\w/gim))
+
+// \b : 63개에 해당하지 않는 문자 경계. ex)., 공백 등
+console.log(str.match(/\b/gim))
+
+// t로 시작하고 그 뒤에 2개 이상 오는 단어 찾기.
+// \b : 63개가 아닌 문자로 시작하는 거에서 \b : 63개가 아닌 문자로 끝나는 거 사이에 찾고자 하는 정규식을 표현.
+console.log(str.match(/\bt\w{2,}\b/gim))
+
+// \d : 숫자 문자
+console.log(str.match(/\d{2,}/gim))
+
+// \s : 숫자 문자
+const h = '   the world  !'
+console.log(h.match(/\s/g))
+
+// 모든 공백 제거.
+console.log(h.replace(/\s/g, ''))
+
+// (?=) : 앞쪽 일치 패턴
+console.log(str.match(/.{1,}(?=@)/g))
+
+// (?<=) : 뒤쪽 일치 패턴
+console.log(str.match(/(?<=@).{1,}/g))
