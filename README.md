@@ -14,7 +14,7 @@
 
 #### NPM
 
-npm init -y
+- npm init -y
 
 - npm install -D xxx : 개발용 의존성 패키지 설치. (개발할 때만 도움을 받는 용도)<br>
   ex) npm install parcel-bundler -D (npm install -D parcel-bundler)
