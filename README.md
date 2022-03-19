@@ -82,7 +82,7 @@ e.g) .cache, dist, node_modules
   - Test site
     - https://regexr.com/
 
-  - 정규식t 생성
+  - 정규식 생성
     ```js
 
     // 생성자
