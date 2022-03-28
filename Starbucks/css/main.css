@@ -5,6 +5,7 @@ body {
     font-weight: 400;
     line-height: 1.4;
     font-family: 'Nanum Gothic', sans-serif;
+    height: 3000px;
 }
 img {
     display: block;
@@ -19,8 +20,11 @@ a {
 }
 /* HEADER */
 header {
+    width: 100%;
     background-color: #f6f5f0;
-    border-bottom: 1px solid #c8c8c8
+    border-bottom: 1px solid #c8c8c8;
+    position: fixed;
+    top: 0;
 
 }
 header > .inner {
@@ -116,9 +120,6 @@ header .main-menu {
     z-index: 1;
     display: flex;
   }
-header .main-menu .item{
-   
-}
 header .main-menu .item .item__name {
     padding: 10px 20px 34px 20px;
     font-family: Arial, sans-serif;
@@ -182,3 +183,17 @@ header .main-menu .item .item__contents .contents__texture p {
     margin: 4px 0 14px;
 } 
 
+/* 부모 요소 -> header */
+header .badges {
+    position: absolute;
+    top: 132px;
+    right: 12px;
+}
+
+header .badges .badge {
+    /* 모서리 둥글게 깍기 */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15)
+}
