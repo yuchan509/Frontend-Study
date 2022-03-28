@@ -31,6 +31,9 @@
     <link rel="stylesheet" href="./css/main.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
     <script defer src="./js/main.js"></script>
 
 </head>
@@ -68,7 +71,11 @@
                 </div>
             </div>
             <!-- MAIN-MENU -->
-            <ul class="main-menu">
+            <!-- #### HTML 클래스 속성의 작명법
+            BEM(Block Element Modifier)
+            - 요소__일부분 Underscore(Lodash) 기호로 요소의 일부분을 표시
+            - 요소--상태 Hyphen(Dash) 기호로 요소의 상태를 표시 -->
+                        <ul class="main-menu">
                 <li class="item">
                   <div class="item__name">COFFEE</div>
                   <div class="item__contents">
@@ -367,6 +374,16 @@
                 </li>
             </ul>
         </div>
+
+        <div class="badges">
+          <div class="badge">
+            <img src="./images/badge1.jpg" alt="Badge"/>
+          </div>
+          <div class="badge">
+            <img src="./images/badge2.jpg" alt="Badge"/>
+          </div>  
+        </div>
+
     </header>
 </body>
 </html>
