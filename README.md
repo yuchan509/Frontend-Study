@@ -1,10 +1,9 @@
 # JavaScript & React
-### JavaScript & React Study
 
-### Setting
+## Setting
 - npm run dev
 
-#### NVM
+## NVM
 - nvm ls
 - nvm install Major.Minor.Patch
 - nvm uninstall Major.Minor.Patch
@@ -12,7 +11,7 @@
 - nvm --version
 - nvm --help
 
-#### NPM
+## NPM
 
 - npm init -y
 
@@ -25,13 +24,12 @@
 
 package.json 추가 사항.
 
-"dev" : "parcel index.html" <br>
-"build" : "parcel build index.html : 사용자가 웹브라우저에서 보기 위한 방식.
-npm run build 실행시 dist 폴더 생성됨 -> '난독화' 되어 자동 작성됨.
+- "dev" : "parcel index.html" 
+- "build" : "parcel build index.html : 사용자가 웹브라우저에서 보기 위한 방식.
+  - npm run build 실행시 dist 폴더 생성됨 -> '난독화' 되어 자동 작성됨.
 
 
-
-#### 유의적 버전(Semantic Versioning, SemVer)
+## 유의적 버전(Semantic Versioning, SemVer)
 
 ^Major.Minor.Patch
 E.g :12.14.1
@@ -46,7 +44,7 @@ E.g :12.14.1
 - Patch : 기존 버전과 호환되는 버그 및 오타 등이 수정된 버전.
 
 
-#### NPM 프로젝트의 버전 관리(.gitignore)
+## NPM 프로젝트의 버전 관리(.gitignore)
 - Source Tree 이용.
 
 - version 관리가 필요하지 않는 폴더는 삭제.
@@ -108,10 +106,10 @@ E.g :12.14.1
 
 
 
-#### ECMA Scriptm (ES)
+## ECMA Scriptm (ES)
 
 
-#### 정규표현식(Regular Expression, RegExp)
+## 정규표현식(Regular Expression, RegExp)
   - 역할
     - 문자 검색(search)
     - 문자 대체(replace)
@@ -188,7 +186,7 @@ E.g :12.14.1
 
 
 
-#### HTML 클래스 속성의 작명법
+## HTML 클래스 속성의 작명법
   - BEM(Block Element Modifier)
     - 요소__일부분 Underscore(Lodash) 기호로 요소의 일부분을 표시
     - 요소--상태 Hyphen(Dash) 기호로 요소의 상태를 표시
