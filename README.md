@@ -70,6 +70,41 @@ e.g) .cache, dist, node_modules
   - :wq + enter (if -> e45: 'readonly' option is set (add ! to override) 발생할 경우 :w! + enter(강제 수정))
   - git rebase --abort(도중에 rebase 중지하고자 할 경우)
   - git push -f origin 현재 브랜치.
+
+* git commit & push가 작동을 안할 때
+  - 현재 다른 프로세스에서 git 프로세스가 동작하고 있어서 index.lock 파일에 의해서 뭔가 락이 걸린듯한 상황
+    ``` git
+    fatal: Unable to create 'repository/.git/index.lock': File exists. 
+    If no other git process is currently running, this probably means a git process crashed in this repository earlier. 
+    Make sure no other git process is running and remove the file manually to continue.
+
+    ```
+
+  - rm -f ./.git/index.lock 실행.(Lock 해제)
+
+
+* git reset(Source Tree)
+  - 돌리고 싶은 지점에서 오른쪽 우클릭 선택.
+  - 이 커밋까지 현재 브랜치를 초기화 수행.
+    - soft - 모든 로컬 변경사항 유지.
+    - mixed - 작업 상태는 그대로 두지만 인덱스는 리셋.
+    - hard - 모든 자업 상태 내 변경 사항 버림 --> 데이터 유실 방식 가능성 존재.
+      - Error 발생 문제 있음
+      ``` git
+        hint: Updates were rejected because the tip of your current branch is behind
+        hint: its remote counterpart. Integrate the remote changes (e.g.
+        hint: 'git pull ...') before pushing again.
+        hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+      ```
+      - 강제 Push : git push -u origin +main(+ 강제 푸시 작업)
+
+* git Data 복구 
+  - git reflog : 유실된 commit을 찾은 후 해당 commit의 commitID를 기록.
+  - git reset --hard {commitID}
+    - E.g. git reset --hard HEAD@{number}
+
+
+
 #### ECMA Scriptm (ES)
 
 
