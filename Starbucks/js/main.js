@@ -55,3 +55,19 @@ window.addEventListener('scroll', _.throttle(function () {
 
 
 // FAID IN
+const fadeEls = document.querySelectorAll('.visual .fade-in')
+fadeEls.forEach(function (fadeEl, index) {
+    gsap.to(fadeEl, 1, {
+        // 0.7 -> 1.4 -> 2.1 -> ...
+        delay: (index + 1) * .7,
+        opacity: 1
+    })
+})
+
+// SWIPER
+// new Swiper(선택자, 옵션)
+new Swiper('.notice-line .swiper-container', {
+    direction: 'vertical',
+    autoplay: true,
+    loop: true
+})
