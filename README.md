@@ -90,12 +90,12 @@ e.g) .cache, dist, node_modules
     - mixed - 작업 상태는 그대로 두지만 인덱스는 리셋.
     - hard - 모든 자업 상태 내 변경 사항 버림 --> 데이터 유실 방식 가능성 존재.
       - Error 발생 문제 있음
-      ``` git
-        hint: Updates were rejected because the tip of your current branch is behind
-        hint: its remote counterpart. Integrate the remote changes (e.g.
-        hint: 'git pull ...') before pushing again.
-        hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-      ```
+        ``` git
+          hint: Updates were rejected because the tip of your current branch is behind
+          hint: its remote counterpart. Integrate the remote changes (e.g.
+          hint: 'git pull ...') before pushing again.
+          hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+        ```
       - 강제 Push : git push -u origin +main(+ 강제 푸시 작업)
 
 * git Data 복구 
