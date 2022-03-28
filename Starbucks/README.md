@@ -29,7 +29,7 @@ Naver 블로그, 카카오톡 미리보기 설정
 - `og:description`: 페이지의 간단한 설명
 
 
-트위터 미리보기 설정
+Twitter 미리보기 설정
 
 ```html
 <meta name="twitter:title" content="콘텐츠 제목" /> 
@@ -47,3 +47,14 @@ Naver 블로그, 카카오톡 미리보기 설정
 - `twitter:site`: 속한 사이트의 이름
 - `twitter:description`: 페이지의 간단한 설명
 
+
+
+## Lodash _.throttle()
+
+[Lodash](https://lodash.com/) : `다양한 유틸리티 기능을 제공하는 js 라이브러리.`
+
+
+[Lodash _.throttle](https://cdnjs.com/libraries/lodash.js) : 
+`매 ms마다 최대 한 번만 호출될 수 있도록 Throttle된 함수를 생성.`
+
+Lodash _.throttle을 사용할 만한 실제 사례는 Infinite scroll 구현이 존재. Infinite scroll에서는 대개 AJAX 요청을 보내나, onscroll에 AJAX 요청을 바인딩해놓으면 스크롤 이벤트가 많이 발생하므로 과다한 요청을 보내게 됨. 따라서 클라이언트와 서버의 부담을 줄이기 위해 적당한 양의 요청을 보내도록 조절할 필요가 있음. _.throttle은 이러한 문제를 해결하기에 좋은 수단이다.
