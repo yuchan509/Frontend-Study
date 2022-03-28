@@ -47,8 +47,10 @@ E.g :12.14.1
 
 
 #### NPM 프로젝트의 버전 관리(.gitignore)
+- Source Tree 이용.
+
 - version 관리가 필요하지 않는 폴더는 삭제.
-e.g) .cache, dist, node_modules 
+  e.g) .cache, dist, node_modules 
 
 .gitignore 파일을 만들어 올리지 않을 항목을 저장.
 
@@ -90,6 +92,7 @@ e.g) .cache, dist, node_modules
     - mixed - 작업 상태는 그대로 두지만 인덱스는 리셋.
     - hard - 모든 자업 상태 내 변경 사항 버림 --> 데이터 유실 방식 가능성 존재.
       - Error 발생 문제 있음
+      
         ``` git
           hint: Updates were rejected because the tip of your current branch is behind
           hint: its remote counterpart. Integrate the remote changes (e.g.
