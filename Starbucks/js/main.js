@@ -98,6 +98,18 @@ new Swiper('.promotion .swiper-container', {
       }
 })
 
+
+new Swiper('.awards .swiper-container', {
+    autoplay: true, 
+    loop: true, 
+    spaceBetween: 30, 
+    slidesPerView: 5, 
+    navigation: { 
+      prevEl: '.awards .swiper-prev', 
+      nextEl: '.awards .swiper-next' 
+    }
+  })
+
 const promotionEl = document.querySelector('.promotion')
 const promotionToggleBtn = document.querySelector('.toggle-promotion')
 let isHidePromtion = false
@@ -136,3 +148,23 @@ gsap.to(
 floatingObject('.floating1', 1, 15)
 floatingObject('.floating2', .5, 15)
 floatingObject('.floating3', 1.5, 20)
+
+
+const spyEls = document.querySelectorAll('section.scroll-spy')
+spyEls.forEach(function (spyEl) {
+    new ScrollMagic
+        .Scene({
+            // 보여짐 여부를 감시할 요소를 지정.
+            triggerElement: spyEl,
+            // 화면의 80% 지점에서 보여짐 여부 감시.
+            triggerHook: .8
+
+        })
+        // 요소가 화면에 보이면 show 클래스 추가
+        .setClassToggle(spyEl, 'show')
+        // 컨트롤러에 장면을 할당.
+        .addTo(new ScrollMagic.Controller())
+}) 
+
+const thisYear = document.querySelector('.this-year')
+thisYear.textContent = new Date().getFullYear()
