@@ -56,7 +56,7 @@ Twitter 미리보기 설정
 - 웹사이트 보안 개선.
 
 ## Material-icons
-[Material-icons](https://fonts.google.com/icons?selected=Material+Icons) : Material icons는 구글이 제공하는 아이콘 디자인 모음으로 800개가 넘는 아이콘이 존재하며 무료로 이용이 가능.
+[Material-icons](https://fonts.google.com/icons?selected=Material+Icons) : `Material icons는 구글이 제공하는 아이콘 디자인 모음으로 800개가 넘는 아이콘이 존재하며 무료로 이용이 가능.`
 
 Material-icons CDN 설치
 
@@ -83,7 +83,9 @@ Lodash _.throttle을 사용할 만한 실제 사례는 Infinite scroll 구현이 존재. Infinit
 
 
 ## Swiper
-[Swiper](https://swiperjs.com/) : Swiper는 다양한 사용자 옵션을 제공하고 있기에 사용하기 편리한 무료 슬라이드 라이브러리(플러그인).
+[Swiper](https://swiperjs.com/) : `Swiper는 다양한 사용자 옵션을 제공하고 있기에 사용하기 편리한 무료 슬라이드 라이브러리(플러그인).`
+
+- 참고 : 해당 프로젝트에서는 Swiper7 이상을 적용시 문제가 발생할 수 있음.
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
@@ -92,9 +94,9 @@ Lodash _.throttle을 사용할 만한 실제 사례는 Infinite scroll 구현이 존재. Infinit
 
 
 ## Gsap & ScrollToPlugin 
-[Gsap](https://cdnjs.com/li[braries/gsap) : 프론트엔드 개발자와 디자이너들이 쉽게 사용할 수 있는 타임라인 기반의 GrennSock에서 만든 자바스크립트 애니메이션 라이브러리.
+[Gsap](https://cdnjs.com/li[braries/gsap) : `프론트엔드 개발자와 디자이너들이 쉽게 사용할 수 있는 타임라인 기반의 GrennSock에서 만든 자바스크립트 애니메이션 라이브러리.`
 
-[ScrollToPlugin](https://greensock.com/ScrollToPlugin) : 
+[ScrollToPlugin](https://greensock.com/ScrollToPlugin) : ``
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -104,45 +106,66 @@ Lodash _.throttle을 사용할 만한 실제 사례는 Infinite scroll 구현이 존재. Infinit
 
 [gsap.to()](https://greensock.com/docs/v3/GSAP/gsap.to()) 
 
-gsap.to(요소, 지속시간, 옵션)
+- sap.to(요소, 지속시간, 옵션)
 
-```js
-const toTopEl = document.querySelector('#to-top')
+  ```js
+  const toTopEl = document.querySelector('#to-top')
 
-window.addEventListener('scroll', _.throttle(function () {
-    console.log('scroll')
-    console.log(window.scrollY)
-    if (window.scrollY > 500) {
-        gsap.to(badgeEl, .6, {
-            opacity: 0,
-            display: 'none'
-        })
-        gsap.to(toTopEl, .2, {
-            x: 0
-        })
-    }
-    else
-    {
-        gsap.to(badgeEl, .6, {
-            opacity: 1,
-            display: 'block'
-        })
-        gsap.to(toTopEl, .2, {
-            x: 100
-        })
-    }
-    }, 300))
+  window.addEventListener('scroll', _.throttle(function () {
+      console.log('scroll')
+      console.log(window.scrollY)
+      if (window.scrollY > 500) {
+          gsap.to(badgeEl, .6, {
+              opacity: 0,
+              display: 'none'
+          })
+          gsap.to(toTopEl, .2, {
+              x: 0
+          })
+      }
+      else
+      {
+          gsap.to(badgeEl, .6, {
+              opacity: 1,
+              display: 'block'
+          })
+          gsap.to(toTopEl, .2, {
+              x: 100
+          })
+      }
+      }, 300))
 
-    toTopEl.addEventListener('click', function () {
-        gsap.to(window, 0.7, {
-            scrollTo: 0
-        })
-    })
-```
+      toTopEl.addEventListener('click', function () {
+          gsap.to(window, 0.7, {
+              scrollTo: 0
+          })
+      })
+  ```
+
+## ScrollMagic
+[ScrollMagic](https://github.com/janpaepke/ScrollMagic) : `스크롤과 요소의 상호 작용을 위한 자바스크립트 라이브러리.`
+
+  ```js
+  const spyEls = document.querySelectorAll('section.scroll-spy')
+  spyEls.forEach(function (spyEl) {
+      new ScrollMagic
+          .Scene({
+              // 보여짐 여부를 감시할 요소를 지정.
+              triggerElement: spyEl,
+              // 화면의 80% 지점에서 보여짐 여부 감시.
+              triggerHook: .8
+
+          })
+          // 요소가 화면에 보이면 show 클래스 추가
+          .setClassToggle(spyEl, 'show')
+          // 컨트롤러에 장면을 할당.
+          .addTo(new ScrollMagic.Controller())
+  }) 
+  ```
 
 
 ## Youtube Iframe Api
-[Youtube Iframe Api](https://developers.google.com/youtube/iframe_api_reference?hl=ko) 
+[Youtube Iframe Api](https://developers.google.com/youtube/iframe_api_reference?hl=ko) :  `웹사이트에 YouTube 동영상 플레이어를 퍼가고 JavaScript를 사용하여 플레이어를 제어`
 
 ```html
 <!-- in HEAD -->
