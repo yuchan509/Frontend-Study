@@ -58,7 +58,7 @@ E.g :12.14.1
 - git status : 변경 사항 추적 확인.
 - git commit -m 'Project'
 - git log
-- remote add origin https://github.com/yuchan509/Javacript.git
+- remote add origin https://github.com/yuchan509/Frontend-Study
 - git push origin master
 
 * git commit message 수정 
