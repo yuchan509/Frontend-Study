@@ -1,7 +1,5 @@
 # STARBUCKS
 
-## 스타벅스 예제를 만들기 위한 데이터 수집.
-
 ## The Open Graph protocol(OG)
 : 콘텐츠의 요약 내용이 SNS에 게시되는데 최적화된 데이터를 가지고 갈 수 있도록 설정하는 것.
 
