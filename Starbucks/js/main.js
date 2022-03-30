@@ -150,14 +150,20 @@ function random(min, max) {
 
 function floatingObject(selector, delay, size) {
 gsap.to(
-    selector, // 선택자
-    random(1.5, 2.5), // 애니메이션 동작 시간
+    // 선택자
+    selector, 
+    // 애니메이션 동작 시간.
+    random(1.5, 2.5), 
     {
-    delay: random(0, delay), // 얼마나 늦게 애니메이션을 시작할 것인지 지연 시간을 설정.
-    y: size, // `transform: translateY(수치);`와 같음. 수직으로 얼마나 움직일지 설정.
-    repeat: -1, // 몇 번 반복하는지를 설정, `-1`은 무한 반복.
-    yoyo: true, // 한번 재생된 애니메이션을 다시 뒤로 재생.
-    ease: Power1.easeInOut // Easing 함수 적용.
+    delay: random(0, delay), 
+    // `transform: translateY(수치);`와 같음. 수직으로 얼마나 움직일지 설정.
+    y: size, 
+    // 몇 번 반복하는지를 설정, `-1`은 무한 반복.
+    repeat: -1, 
+    // 한번 재생된 애니메이션을 다시 뒤로 재생.
+    yoyo: true,
+    // Easing 함수 적용.
+    ease: Power1.easeInOut 
     }
 )
 }
