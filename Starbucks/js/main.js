@@ -27,6 +27,8 @@ const badgeEl = document.querySelector('header .badges')
 
 // https://cdnjs.com/libraries/gsap
 // gsap.to(요소, 지속시간, 옵션) : js 애니메이션 라이브러리.
+const toTopEl = document.querySelector('#to-top')
+
 window.addEventListener('scroll', _.throttle(function () {
     console.log('scroll')
     console.log(window.scrollY)
@@ -40,6 +42,10 @@ window.addEventListener('scroll', _.throttle(function () {
             opacity: 0,
             display: 'none'
         })
+        // 버튼 보이기
+        gsap.to(toTopEl, .2, {
+            x: 0
+        })
     }
     else
     {
@@ -50,9 +56,19 @@ window.addEventListener('scroll', _.throttle(function () {
             opacity: 1,
             display: 'block'
         })
+        // 버튼 숨기기
+        gsap.to(toTopEl, .2, {
+            x: 100
+        })
     }
     }, 300))
 
+
+    toTopEl.addEventListener('click', function () {
+        gsap.to(window, 0.7, {
+            scrollTo: 0
+        })
+    })
 
 // FAID IN
 const fadeEls = document.querySelectorAll('.visual .fade-in')
@@ -122,13 +138,13 @@ promotionToggleBtn.addEventListener('click', function () {
 
     } else {
         // 보임 처리.
-        promotionEl.classList.add('remove')
+        promotionEl.classList.remove('hide')
     }
 })
 
 function random(min, max) {
     // `.toFixed()`를 통해 반환된 '문자 데이터'를,
-    // `parseFloat()`을 통해 소수점을 가지는 '숫자 데이터'로 변환
+    // `parseFloat()`을 통해 소수점을 가지는 '숫자 데이터'로 변환.
     return parseFloat((Math.random() * (max - min) + min).toFixed(2))
   }
 
