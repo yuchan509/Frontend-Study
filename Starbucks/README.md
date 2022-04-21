@@ -71,7 +71,6 @@ Material-icons CDN 설치
 <div class="material-icons">upload</div>
 ```
 
-
 ## Lodash _.throttle()
 
 [Lodash](https://lodash.com/) : `다양한 유틸리티 기능을 제공하는 js 라이브러리.`
@@ -84,7 +83,7 @@ Lodash _.throttle을 사용할 만한 실제 사례는 Infinite scroll 구현이 존재. Infinit
 
 
 ## Swiper
-[Swiper](https://swiperjs.com/) : Swiper는 다양한 사용자 옵션을 제공하고 있기에 사용하기 편리한 무료 라이브러리(플러그인).
+[Swiper](https://swiperjs.com/) : Swiper는 다양한 사용자 옵션을 제공하고 있기에 사용하기 편리한 무료 슬라이드 라이브러리(플러그인).
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
@@ -92,6 +91,99 @@ Lodash _.throttle을 사용할 만한 실제 사례는 Infinite scroll 구현이 존재. Infinit
 ```
 
 
+## Gsap & ScrollToPlugin 
+[Gsap](https://cdnjs.com/li[braries/gsap) : 프론트엔드 개발자와 디자이너들이 쉽게 사용할 수 있는 타임라인 기반의 GrennSock에서 만든 자바스크립트 애니메이션 라이브러리.
 
-## Gsap
-[Gsap](https://cdnjs.com/libraries/gsap)
+[ScrollToPlugin](https://greensock.com/ScrollToPlugin) : 
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollToPlugin.min.js" integrity="sha512-9DDJWj17gkdeGHU0Zr76wc9jY2g0IwE7ZCIxakVYKyzlTiOWZDZJOTaVgAzNo+LB7+EbGXxwCXkOP+a5rgkuqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+```
+
+[gsap.to()](https://greensock.com/docs/v3/GSAP/gsap.to()) 
+
+gsap.to(요소, 지속시간, 옵션)
+
+```js
+const toTopEl = document.querySelector('#to-top')
+
+window.addEventListener('scroll', _.throttle(function () {
+    console.log('scroll')
+    console.log(window.scrollY)
+    if (window.scrollY > 500) {
+        gsap.to(badgeEl, .6, {
+            opacity: 0,
+            display: 'none'
+        })
+        gsap.to(toTopEl, .2, {
+            x: 0
+        })
+    }
+    else
+    {
+        gsap.to(badgeEl, .6, {
+            opacity: 1,
+            display: 'block'
+        })
+        gsap.to(toTopEl, .2, {
+            x: 100
+        })
+    }
+    }, 300))
+
+    toTopEl.addEventListener('click', function () {
+        gsap.to(window, 0.7, {
+            scrollTo: 0
+        })
+    })
+```
+
+
+## Youtube Iframe Api
+[Youtube Iframe Api](https://developers.google.com/youtube/iframe_api_reference?hl=ko) 
+
+```html
+<!-- in HEAD -->
+<script defer src="./js/youtube.js"></script>
+
+<!-- in BODY -->
+<div id="player"></div>
+```
+
+```js
+// Youtube Iframe Api 추가한다는 의미.
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubeIframeAPIReady() {
+    new YT.Player('player', {
+    videoId: 'An6LvWQuj_8',
+    playerVars: {
+        // 자동재생.
+        autoplay: true,
+        // 컨트롤러의 유무.
+        controls:2,
+        // 반복 재생의 여부.
+        loop: true,
+        // playlist : 반복 재생할 유튜브 영상 ID 목록.
+        playlist: 'An6LvWQuj_8',
+    },
+    events: {
+        // 동영상이 준되면 발생하는 이벤트 함수.
+        onReady: function (event) {
+          // 음소거
+            event.target.mute()
+        },
+        // 상태가 변함에 따라 해당 함수가 발생하는 이벤트 함수.
+        'onStateChange' : onPlayerStateChange
+
+    }
+  });
+}
+
+```
