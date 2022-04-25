@@ -185,7 +185,7 @@ function onYouTubeIframeAPIReady() {
     new YT.Player('player', {
     videoId: 'An6LvWQuj_8',
     playerVars: {
-        // 자동재생.
+        // 자동 재생.
         autoplay: true,
         // 컨트롤러의 유무.
         controls:2,
