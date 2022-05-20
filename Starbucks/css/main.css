@@ -420,6 +420,15 @@ header .badges .badge {
     justify-content: center;
     align-items: center;
 }
+
+.notice .notice-line .inner__right .toggle-promotion {
+    width: 62px;
+    height: 62px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .notice .notice-line .inner__right .toggle_promotion .material-icons {
     font-size: 30px;
 }
@@ -429,8 +438,8 @@ header .badges .badge {
     height: 693px;
     background-color: #f6f5ef;
     position: relative;
-    overflow: hidden;
     transition: height .4s;
+        overflow: hidden;
   }
 .notice .promotion.hide {
     height: 0;
@@ -565,7 +574,7 @@ header .badges .badge {
   }
 .youtube .youtube__area {
     width: 1920px;
-    background-color: orange;
+    /* background-color: orange; */
     position: absolute;
     left: 50%;
     margin-left: calc(1920px / -2);
@@ -596,8 +605,9 @@ header .badges .badge {
     left: 0;
 }
 .youube .inner {
-    height: 700px;
-    background-color: royalblue;
+    /* height: 700px; */
+    /* background-color: royalblue; */
+    height: inherit;
 }
 .youtube .floating1 {
     position: absolute;
@@ -893,7 +903,7 @@ footer .logo {
 }
   
   
-  /*SCROLL TO TOP*/
+/*SCROLL TO TOP*/
 #to-top {
     position: fixed;
     bottom: 30px;
