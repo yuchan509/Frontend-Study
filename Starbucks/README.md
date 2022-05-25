@@ -84,7 +84,12 @@ Lodash _.throttle을 사용할 만한 실제 사례는 Infinite scroll 구현이 존재. Infinit
 
 
 ## Swiper
-[Swiper](https://swiperjs.com/)
+[Swiper](https://swiperjs.com/) : Swiper는 다양한 사용자 옵션을 제공하고 있기에 사용하기 편리한 무료 라이브러리(플러그인).
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+```
 
 
 
